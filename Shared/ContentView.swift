@@ -50,7 +50,9 @@ struct ContentView: View {
                     Text("Deseja incluir 10%?")
                 }
                 Section {
-                    Text(totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                    tipPercentage == 0 ?
+                    Text(totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "USD")).foregroundColor(.red)
+                    :Text(totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "USD"))
                 }
             }
             .navigationTitle("Dividimos")
